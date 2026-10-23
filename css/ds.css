@@ -43,6 +43,7 @@
     display: block;
   }
 
+  /* Accroche posée dans l'en-tête de la page. */
   .ds-header .lr-script {
     margin-top: var(--lr-space-8);
     margin-bottom: var(--lr-space-8);
@@ -185,6 +186,7 @@
     padding-right: 0;
   }
 
+  /* Légende placée directement dans le cadre (>). */
   .ds-demo--frame > .ds-caption {
     padding-left: var(--lr-space-24);
     padding-right: var(--lr-space-24);
@@ -202,6 +204,7 @@
     gap: var(--lr-space-16);
   }
 
+  /* Espace entre deux rangées qui se suivent (+). */
   .ds-row + .ds-row {
     margin-top: var(--lr-space-16);
   }
@@ -419,6 +422,7 @@
     background-color: var(--lr-color-bg-raised);
   }
 
+  /* Grand exemple de police dans la carte. */
   .ds-specimen .ds-specimen__sample {
     margin: 0;
     color: var(--lr-color-heading);
@@ -599,6 +603,7 @@
   }
 
   @media (min-width: 768px) {
+    /* Éléments posés dans la grille des logos. */
     .ds-logos .ds-logos__wide {
       grid-column: span 2;
     }
@@ -615,6 +620,7 @@
     gap: var(--lr-space-16);
   }
 
+  /* Les 3 tailles du pictogramme : nth-child vise le 1er, le 2e et le 3e. */
   .ds-picto-sizes .lr-picto:nth-child(1) {
     width: 1.5rem;
     height: 1.5rem;
@@ -663,6 +669,7 @@
     border-top: var(--lr-border-hairline) solid var(--lr-color-hairline);
   }
 
+  /* Bouton posé dans la zone d'achat. */
   .ds-product__buy .lr-btn {
     flex: 1 1 14rem;
   }
@@ -713,6 +720,7 @@
     gap: var(--lr-space-12);
   }
 
+  /* Icônes de la liste : coche, ou croix pour .ds-no. */
   .ds-checklist .lr-icon {
     margin-top: 0.125rem;
     color: var(--lr-color-success);
@@ -776,6 +784,7 @@
     font-family: var(--lr-font-body);
   }
 
+  /* Police manuscrite, aussi dans les cartes de spécimens. */
   .ds-specimen .ds-ff-script,
   .ds-ff-script {
     font-family: var(--lr-font-script);
@@ -803,6 +812,7 @@
     font-weight: var(--lr-fw-semibold);
   }
 
+  /* Éléments placés directement dans le formulaire produit (>). */
   .ds-product__form > .lr-badges {
     margin-bottom: var(--lr-space-12);
   }
@@ -811,14 +821,17 @@
     margin-bottom: var(--lr-space-24);
   }
 
+  /* Aide placée juste après les puces (+). */
   .lr-chips + .lr-fieldset__hint {
     margin-top: var(--lr-space-16);
   }
 
+  /* Grand bouton dans le formulaire de démo. */
   .ds-form .lr-btn--lg {
     margin-top: var(--lr-space-16);
   }
 
+  /* Légende placée juste après une rangée (+). */
   .ds-row + .ds-caption {
     margin-top: var(--lr-space-24);
   }

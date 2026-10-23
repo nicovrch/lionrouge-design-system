@@ -3,6 +3,7 @@
 
 @layer base {
   /* ===== Base ===== */
+  /* Styles par défaut des balises HTML (body, titres, liens…). */
   *,
   *::before,
   *::after {
@@ -251,6 +252,7 @@
     border-top: var(--lr-border-hairline) solid currentColor;
   }
 
+  /* Pictogramme posé dans le séparateur : on règle sa taille ici. */
   .lr-divider .lr-picto {
     width: 1.5rem;
     height: 1.5rem;
@@ -357,6 +359,7 @@
     width: 100%;
   }
 
+  /* Bouton désactivé : vrai bouton (:disabled) ou lien marqué aria-disabled. */
   .lr-btn:disabled,
   .lr-btn[aria-disabled="true"] {
     border-color: var(--lr-color-disabled-bg);
@@ -420,6 +423,7 @@
     white-space: nowrap;
   }
 
+  /* Icône posée dans le badge : on ajuste sa taille. */
   .lr-badge .lr-icon {
     width: 1rem;
     height: 1rem;
@@ -500,6 +504,7 @@
     grid-row: 1;
   }
 
+  /* Logo posé dans l'en-tête. */
   .lr-header .lr-logo {
     grid-column: 2;
     grid-row: 1;
@@ -527,6 +532,7 @@
     display: none;
   }
 
+  /* Menu ouvert : le modificateur du bloc change ses éléments. */
   .lr-header--open .lr-header__nav {
     display: block;
   }
@@ -552,6 +558,7 @@
     text-transform: uppercase;
   }
 
+  /* Page en cours : repérée par l'attribut aria-current, lu par les lecteurs d'écran. */
   .lr-header__link:hover,
   .lr-header__link[aria-current="page"] {
     color: var(--lr-color-heading);
@@ -561,6 +568,7 @@
     font-weight: var(--lr-fw-semibold);
   }
 
+  /* Icône burger ou croix selon que le menu est ouvert ou non. */
   .lr-header--open .lr-burger-icon,
   .lr-close-icon {
     display: none;
@@ -571,6 +579,7 @@
   }
 
   @media (min-width: 1152px) {
+    /* En-tête complet seulement : :not() écarte la version compacte. */
     .lr-header:not(.lr-header--compact) .lr-header__inner {
       gap: var(--lr-space-16);
       min-height: 5rem;
@@ -653,6 +662,7 @@
     color: var(--lr-color-heading);
   }
 
+  /* Onglet de la page en cours (attribut aria-current). */
   .lr-tabs__link[aria-current="page"] {
     border-bottom-color: var(--lr-color-heading);
     color: var(--lr-color-heading);
@@ -676,6 +686,7 @@
     gap: var(--lr-space-8);
   }
 
+  /* Séparateur entre deux liens : + vise un élément qui en suit un autre. */
   .lr-breadcrumb__item + .lr-breadcrumb__item::before {
     content: "";
     width: 0.4rem;
@@ -689,6 +700,7 @@
     color: var(--lr-color-text);
   }
 
+  /* Page en cours du fil d'Ariane (attribut aria-current). */
   .lr-breadcrumb [aria-current="page"] {
     color: var(--lr-color-text-muted);
   }
@@ -897,11 +909,13 @@
     border-top: var(--lr-border-hairline) solid var(--lr-color-divider);
   }
 
+  /* Bouton posé dans le pied de la carte. */
   .lr-card__footer .lr-btn {
     position: relative;
     z-index: 2;
   }
 
+    /* Carte épuisée : le modificateur du bloc pâlit l'image. */
     .lr-card--soldout .lr-media-placeholder {
     opacity: 0.45;
   }
@@ -916,6 +930,7 @@
     color: var(--lr-gold-200);
   }
 
+  /* Pictogramme posé dans l'emplacement photo. */
   .lr-media-placeholder .lr-picto {
     width: 28%;
     height: auto;
@@ -1006,10 +1021,12 @@
     color: transparent;
   }
 
+  /* Variante radio : le modificateur du bloc arrondit la marque. */
   .lr-chip--radio .lr-chip__mark {
     border-radius: 50%;
   }
 
+  /* Icône posée dans la marque. */
   .lr-chip__mark .lr-icon {
     width: 0.875rem;
     height: 0.875rem;
@@ -1030,10 +1047,12 @@
         white-space: nowrap;
   }
 
+  /* Survol de la puce : on change son élément __body. */
   .lr-chip:hover .lr-chip__body {
     border-color: var(--lr-color-heading);
   }
 
+  /* Option cochée : le vrai bouton est caché, on stylise la zone qui le suit (+). */
   .lr-chip__input:checked + .lr-chip__body {
     border-color: var(--lr-color-heading);
     box-shadow: inset 0 0 0 1px var(--lr-color-heading);
@@ -1071,6 +1090,7 @@
     display: none;
   }
 
+  /* Variante créneaux : le modificateur du bloc change ses éléments. */
   .lr-chips--slots .lr-chip__body {
     flex-direction: column;
     justify-content: center;
@@ -1120,6 +1140,7 @@
     background-color: var(--lr-color-bg);
   }
 
+  /* Bouton désactivé (:disabled ou aria-disabled). */
   .lr-qty__btn:disabled,
   .lr-qty__btn[aria-disabled="true"] {
     color: var(--lr-color-disabled-text);
@@ -1212,11 +1233,13 @@
     border-color: var(--lr-color-success);
   }
 
+  /* Champ en erreur : état donné par l'attribut aria-invalid. */
   .lr-input[aria-invalid="true"] {
     border-color: var(--lr-color-danger);
     box-shadow: inset 0 0 0 1px var(--lr-color-danger);
   }
 
+  /* Champ en erreur : le modificateur du bloc colore le label. */
   .lr-field--error .lr-field__label {
     color: var(--lr-color-danger);
   }
@@ -1247,6 +1270,7 @@
     gap: var(--lr-space-8);
   }
 
+  /* Champ posé dans le formulaire en ligne. */
   .lr-inline-form .lr-input {
     flex: 1;
     min-width: 0;
@@ -1285,11 +1309,13 @@
     color: transparent;
   }
 
+  /* Icône posée dans la case. */
   .lr-check__box .lr-icon {
     width: 0.875rem;
     height: 0.875rem;
   }
 
+  /* Variante radio : le modificateur du bloc arrondit la case. */
   .lr-check--radio .lr-check__box {
     border-radius: 50%;
   }
@@ -1298,10 +1324,12 @@
     display: none;
   }
 
+  /* Survol : on change l'élément __box. */
   .lr-check:hover .lr-check__box {
     border-color: var(--lr-color-heading);
   }
 
+  /* Case cochée : le vrai champ est caché, on stylise la case qui le suit (+). */
   .lr-check__input:checked + .lr-check__box {
     border-color: var(--lr-color-heading);
     background-color: var(--lr-color-heading);
@@ -1332,6 +1360,7 @@
     font-size: var(--lr-fs-small);
   }
 
+  /* Message d'erreur placé juste après la case (+). */
   .lr-check + .lr-field__error {
     margin-top: calc(-1 * var(--lr-space-8));
   }
@@ -1355,6 +1384,7 @@
     color: var(--lr-color-text);
   }
 
+  /* Icône placée directement dans la notification (>). */
   .lr-notice > .lr-icon {
     margin-top: 0.0625rem;
     color: var(--lr-notice-color);
@@ -1436,6 +1466,7 @@
     letter-spacing: 0;
   }
 
+  /* Trait entre deux étapes : + vise une étape qui en suit une autre. */
   .lr-steps__item + .lr-steps__item::after {
     content: "";
     position: absolute;
@@ -1449,6 +1480,7 @@
     color: var(--lr-color-text);
   }
 
+  /* Étape faite : le modificateur change le numéro. */
   .lr-steps__item--done .lr-steps__num {
     border-color: var(--lr-color-heading);
     background-color: var(--lr-color-heading);
@@ -1459,6 +1491,7 @@
     border-top-color: var(--lr-color-heading);
   }
 
+  /* Étape en cours : repérée par l'attribut aria-current. */
   .lr-steps__item[aria-current="step"] {
     color: var(--lr-color-heading);
   }
@@ -1600,6 +1633,7 @@
     font-size: var(--lr-fs-small);
   }
 
+  /* Icône posée dans le bloc de retrait. */
   .lr-pickup .lr-icon {
     color: var(--lr-color-accent);
   }
