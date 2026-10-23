@@ -1,4 +1,4 @@
-# Design System · Le Lion Rouge Click & Collect (v1.1)
+# Design System · Le Lion Rouge Click & Collect (v1.2)
 
 Page statique HTML/CSS (sans framework, sans Tailwind) qui regroupe les fondations et les composants du futur site.
 
@@ -19,7 +19,7 @@ L'extension Live Server de VS Code fonctionne aussi.
 - HTML : https://validator.w3.org/nu/ → « File upload » → `index.html`
 - CSS : https://jigsaw.w3.org/css-validator/ → « By file upload » → chaque fichier de `css/`
 
-Résultat au 12/10/2026 avec le Nu Html Checker 26.10.11 en local : 0 erreur, 0 avertissement sur `index.html` et sur les 3 fichiers CSS.
+Résultat au 23/10/2026 : 0 erreur sur `index.html` et sur les fichiers CSS.
 Le favicon est intégré à la page (URL `data:`) : un fichier `.svg` séparé peut recevoir des métadonnées ajoutées par certains outils d'export et devenir invalide.
 
 ## Publier sur GitHub Pages
@@ -27,8 +27,6 @@ Le favicon est intégré à la page (URL `data:`) : un fichier `.svg` séparé p
 1. Mets le contenu de ce dossier à la racine d'un dépôt public (ou dans un dossier `docs/`).
 2. Sur GitHub : Settings → Pages → Source « Deploy from a branch » → branche `main`, dossier `/ (root)` ou `/docs`.
 3. Le lien à rendre a la forme `https://<ton-compte>.github.io/<nom-du-depot>/`.
-
-Message de commit proposé : `Design System v1.0 : page statique HTML/CSS`
 
 ## Structure
 

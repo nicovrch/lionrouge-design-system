@@ -5,11 +5,11 @@ function ouvrirMenu(header, ouvert) {
   let bouton = header.querySelector(".lr-header__toggle");
   let texte = bouton.querySelector(".lr-visually-hidden");
   if (ouvert) {
-    header.classList.add("is-open");
+    header.classList.add("lr-header--open");
     bouton.setAttribute("aria-expanded", "true");
     texte.textContent = "Fermer le menu";
   } else {
-    header.classList.remove("is-open");
+    header.classList.remove("lr-header--open");
     bouton.setAttribute("aria-expanded", "false");
     texte.textContent = "Menu";
   }
@@ -19,13 +19,13 @@ let boutonsMenu = document.querySelectorAll(".lr-header__toggle");
 for (let bouton of boutonsMenu) {
   bouton.addEventListener("click", function () {
     let header = bouton.closest(".lr-header");
-    ouvrirMenu(header, !header.classList.contains("is-open"));
+    ouvrirMenu(header, !header.classList.contains("lr-header--open"));
   });
 }
 
 // La touche Échap ferme le menu ouvert
 document.addEventListener("keydown", function (event) {
-  let header = document.querySelector(".lr-header.is-open");
+  let header = document.querySelector(".lr-header--open");
   if (event.key === "Escape" && header) {
     ouvrirMenu(header, false);
     header.querySelector(".lr-header__toggle").focus();
@@ -115,12 +115,12 @@ function verifierChamp(champ) {
     champ.removeAttribute("aria-invalid");
     zone.classList.remove(classeErreur);
     if (champ.required && champ.classList.contains("lr-input")) {
-      champ.classList.add("is-valid");
+      champ.classList.add("lr-input--valid");
     }
   } else {
     champ.setAttribute("aria-invalid", "true");
     zone.classList.add(classeErreur);
-    champ.classList.remove("is-valid");
+    champ.classList.remove("lr-input--valid");
   }
 }
 

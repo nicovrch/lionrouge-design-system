@@ -90,8 +90,8 @@
     --lr-green-300: #A9BBA8;      /* succès sur noir : 10,36:1 */
 
     /* Dégradés */
-    --lr-gradient-gold: radial-gradient(circle, #F0CD7D 0%, #B79A56 100%);
-    --lr-gradient-gold-hover: radial-gradient(circle, #F5DA9C 0%, #C39C51 100%);
+    --lr-gradient-gold: linear-gradient(90deg, #B79A56 0%, #F0CD7D 50%, #B79A56 100%);
+    --lr-gradient-gold-hover: linear-gradient(90deg, #C39C51 0%, #F5DA9C 50%, #C39C51 100%);
     --lr-gradient-picto: linear-gradient(90deg, #C39C51 0%, #F0CD7D 50%, #C39C51 100%);
 
     /* ===== Sémantiques, mode « Clair » (carte, fiche produit, panier, commande) ===== */
@@ -168,8 +168,8 @@
     --lr-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.08), 0 6px 16px rgba(0, 0, 0, 0.06);
     --lr-shadow-2: 0 2px 4px rgba(0, 0, 0, 0.1), 0 12px 32px rgba(0, 0, 0, 0.12);
 
-    --lr-duration-fast: 120ms;
-    --lr-duration-base: 200ms;
+    --lr-duration-fast: 0.12s;
+    --lr-duration-base: 0.2s;
     --lr-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
@@ -191,7 +191,6 @@
     --lr-color-disabled-bg: var(--lr-black-soft);
     --lr-color-disabled-text: var(--lr-grey-300);
 
-    color-scheme: dark;
     background-color: var(--lr-color-bg);
     color: var(--lr-color-text);
   }
