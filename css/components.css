@@ -3,7 +3,7 @@
 
 @layer base {
   /* ===== Base ===== */
-  /* Styles par défaut des balises HTML (body, titres, liens…). */
+  /* ↓ Style de base des balises HTML : s'applique partout, avant les composants */
   *,
   *::before,
   *::after {
@@ -252,7 +252,7 @@
     border-top: var(--lr-border-hairline) solid currentColor;
   }
 
-  /* Pictogramme posé dans le séparateur : on règle sa taille ici. */
+  /* ↓ Règle la taille du pictogramme quand il est dans le séparateur */
   .lr-divider .lr-picto {
     width: 1.5rem;
     height: 1.5rem;
@@ -359,7 +359,7 @@
     width: 100%;
   }
 
-  /* Bouton désactivé : vrai bouton (:disabled) ou lien marqué aria-disabled. */
+  /* ↓ Grise le bouton désactivé : marche pour un <button> (:disabled) comme pour un lien (aria-disabled) */
   .lr-btn:disabled,
   .lr-btn[aria-disabled="true"] {
     border-color: var(--lr-color-disabled-bg);
@@ -423,7 +423,7 @@
     white-space: nowrap;
   }
 
-  /* Icône posée dans le badge : on ajuste sa taille. */
+  /* ↓ Rapetisse l'icône quand elle est dans un badge */
   .lr-badge .lr-icon {
     width: 1rem;
     height: 1rem;
@@ -504,7 +504,7 @@
     grid-row: 1;
   }
 
-  /* Logo posé dans l'en-tête. */
+  /* ↓ Règle le logo quand il est dans l'en-tête */
   .lr-header .lr-logo {
     grid-column: 2;
     grid-row: 1;
@@ -532,7 +532,7 @@
     display: none;
   }
 
-  /* Menu ouvert : le modificateur du bloc change ses éléments. */
+  /* ↓ Affiche le menu quand l'en-tête a la classe --open (ajoutée par le JS au clic) */
   .lr-header--open .lr-header__nav {
     display: block;
   }
@@ -558,7 +558,7 @@
     text-transform: uppercase;
   }
 
-  /* Page en cours : repérée par l'attribut aria-current, lu par les lecteurs d'écran. */
+  /* ↓ Met en avant le lien de la page en cours : aria-current indique aussi la page aux lecteurs d'écran */
   .lr-header__link:hover,
   .lr-header__link[aria-current="page"] {
     color: var(--lr-color-heading);
@@ -568,7 +568,7 @@
     font-weight: var(--lr-fw-semibold);
   }
 
-  /* Icône burger ou croix selon que le menu est ouvert ou non. */
+  /* ↓ Montre le burger quand le menu est fermé, la croix quand il est ouvert */
   .lr-header--open .lr-burger-icon,
   .lr-close-icon {
     display: none;
@@ -579,7 +579,7 @@
   }
 
   @media (min-width: 1152px) {
-    /* En-tête complet seulement : :not() écarte la version compacte. */
+    /* ↓ Sur grand écran, met le menu en ligne : :not() évite de toucher l'en-tête compact */
     .lr-header:not(.lr-header--compact) .lr-header__inner {
       gap: var(--lr-space-16);
       min-height: 5rem;
@@ -662,7 +662,7 @@
     color: var(--lr-color-heading);
   }
 
-  /* Onglet de la page en cours (attribut aria-current). */
+  /* ↓ Souligne l'onglet de la catégorie affichée (marqué par aria-current) */
   .lr-tabs__link[aria-current="page"] {
     border-bottom-color: var(--lr-color-heading);
     color: var(--lr-color-heading);
@@ -686,7 +686,7 @@
     gap: var(--lr-space-8);
   }
 
-  /* Séparateur entre deux liens : + vise un élément qui en suit un autre. */
+  /* ↓ Ajoute le chevron entre deux liens : + vise un élément placé juste après un autre */
   .lr-breadcrumb__item + .lr-breadcrumb__item::before {
     content: "";
     width: 0.4rem;
@@ -700,7 +700,7 @@
     color: var(--lr-color-text);
   }
 
-  /* Page en cours du fil d'Ariane (attribut aria-current). */
+  /* ↓ Grise la page en cours dans le fil d'Ariane (marquée par aria-current) */
   .lr-breadcrumb [aria-current="page"] {
     color: var(--lr-color-text-muted);
   }
@@ -909,14 +909,14 @@
     border-top: var(--lr-border-hairline) solid var(--lr-color-divider);
   }
 
-  /* Bouton posé dans le pied de la carte. */
+  /* ↓ Règle le bouton quand il est en bas de la carte produit */
   .lr-card__footer .lr-btn {
     position: relative;
     z-index: 2;
   }
 
-    /* Carte épuisée : le modificateur du bloc pâlit l'image. */
-    .lr-card--soldout .lr-media-placeholder {
+  /* ↓ Pâlit l'image quand la carte a la classe --soldout (produit épuisé) */
+  .lr-card--soldout .lr-media-placeholder {
     opacity: 0.45;
   }
 
@@ -930,7 +930,7 @@
     color: var(--lr-gold-200);
   }
 
-  /* Pictogramme posé dans l'emplacement photo. */
+  /* ↓ Règle la taille du pictogramme quand il remplace la photo */
   .lr-media-placeholder .lr-picto {
     width: 28%;
     height: auto;
@@ -1021,12 +1021,12 @@
     color: transparent;
   }
 
-  /* Variante radio : le modificateur du bloc arrondit la marque. */
+  /* ↓ Rend la marque ronde pour les choix uniques (classe --radio) */
   .lr-chip--radio .lr-chip__mark {
     border-radius: 50%;
   }
 
-  /* Icône posée dans la marque. */
+  /* ↓ Rapetisse l'icône quand elle est dans la marque */
   .lr-chip__mark .lr-icon {
     width: 0.875rem;
     height: 0.875rem;
@@ -1047,12 +1047,12 @@
         white-space: nowrap;
   }
 
-  /* Survol de la puce : on change son élément __body. */
+  /* ↓ Fonce le contour au survol de la puce */
   .lr-chip:hover .lr-chip__body {
     border-color: var(--lr-color-heading);
   }
 
-  /* Option cochée : le vrai bouton est caché, on stylise la zone qui le suit (+). */
+  /* ↓ Change la puce quand elle est cochée : le vrai bouton radio est caché, on stylise la zone juste après lui (+) */
   .lr-chip__input:checked + .lr-chip__body {
     border-color: var(--lr-color-heading);
     box-shadow: inset 0 0 0 1px var(--lr-color-heading);
@@ -1090,7 +1090,7 @@
     display: none;
   }
 
-  /* Variante créneaux : le modificateur du bloc change ses éléments. */
+  /* ↓ Style des créneaux horaires (classe --slots) : fond noir quand on en choisit un */
   .lr-chips--slots .lr-chip__body {
     flex-direction: column;
     justify-content: center;
@@ -1140,7 +1140,7 @@
     background-color: var(--lr-color-bg);
   }
 
-  /* Bouton désactivé (:disabled ou aria-disabled). */
+  /* ↓ Grise le bouton − ou + quand on ne peut plus changer la quantité */
   .lr-qty__btn:disabled,
   .lr-qty__btn[aria-disabled="true"] {
     color: var(--lr-color-disabled-text);
@@ -1233,13 +1233,13 @@
     border-color: var(--lr-color-success);
   }
 
-  /* Champ en erreur : état donné par l'attribut aria-invalid. */
+  /* ↓ Met le contour en rouge quand le champ est en erreur (aria-invalid, ajouté par le JS) */
   .lr-input[aria-invalid="true"] {
     border-color: var(--lr-color-danger);
     box-shadow: inset 0 0 0 1px var(--lr-color-danger);
   }
 
-  /* Champ en erreur : le modificateur du bloc colore le label. */
+  /* ↓ Met le label en rouge quand le champ a la classe --error */
   .lr-field--error .lr-field__label {
     color: var(--lr-color-danger);
   }
@@ -1270,7 +1270,7 @@
     gap: var(--lr-space-8);
   }
 
-  /* Champ posé dans le formulaire en ligne. */
+  /* ↓ Règle le champ quand il est à côté de son bouton (code promo) */
   .lr-inline-form .lr-input {
     flex: 1;
     min-width: 0;
@@ -1309,13 +1309,13 @@
     color: transparent;
   }
 
-  /* Icône posée dans la case. */
+  /* ↓ Règle la coche quand elle est dans la case */
   .lr-check__box .lr-icon {
     width: 0.875rem;
     height: 0.875rem;
   }
 
-  /* Variante radio : le modificateur du bloc arrondit la case. */
+  /* ↓ Rend la case ronde pour les boutons radio (classe --radio) */
   .lr-check--radio .lr-check__box {
     border-radius: 50%;
   }
@@ -1324,12 +1324,12 @@
     display: none;
   }
 
-  /* Survol : on change l'élément __box. */
+  /* ↓ Fonce le contour de la case au survol */
   .lr-check:hover .lr-check__box {
     border-color: var(--lr-color-heading);
   }
 
-  /* Case cochée : le vrai champ est caché, on stylise la case qui le suit (+). */
+  /* ↓ Remplit la case quand elle est cochée : le vrai champ est caché, on stylise la case juste après lui (+) */
   .lr-check__input:checked + .lr-check__box {
     border-color: var(--lr-color-heading);
     background-color: var(--lr-color-heading);
@@ -1360,7 +1360,7 @@
     font-size: var(--lr-fs-small);
   }
 
-  /* Message d'erreur placé juste après la case (+). */
+  /* ↓ Règle le message d'erreur placé juste après la case (+) */
   .lr-check + .lr-field__error {
     margin-top: calc(-1 * var(--lr-space-8));
   }
@@ -1384,7 +1384,7 @@
     color: var(--lr-color-text);
   }
 
-  /* Icône placée directement dans la notification (>). */
+  /* ↓ Règle l'icône posée directement dans la notification (>) */
   .lr-notice > .lr-icon {
     margin-top: 0.0625rem;
     color: var(--lr-notice-color);
@@ -1466,7 +1466,7 @@
     letter-spacing: 0;
   }
 
-  /* Trait entre deux étapes : + vise une étape qui en suit une autre. */
+  /* ↓ Dessine le trait entre deux étapes : + vise une étape placée juste après une autre */
   .lr-steps__item + .lr-steps__item::after {
     content: "";
     position: absolute;
@@ -1480,7 +1480,7 @@
     color: var(--lr-color-text);
   }
 
-  /* Étape faite : le modificateur change le numéro. */
+  /* ↓ Met le numéro en noir quand l'étape est faite (classe --done) */
   .lr-steps__item--done .lr-steps__num {
     border-color: var(--lr-color-heading);
     background-color: var(--lr-color-heading);
@@ -1491,7 +1491,7 @@
     border-top-color: var(--lr-color-heading);
   }
 
-  /* Étape en cours : repérée par l'attribut aria-current. */
+  /* ↓ Met en avant l'étape en cours (marquée par aria-current) */
   .lr-steps__item[aria-current="step"] {
     color: var(--lr-color-heading);
   }
@@ -1633,7 +1633,7 @@
     font-size: var(--lr-fs-small);
   }
 
-  /* Icône posée dans le bloc de retrait. */
+  /* ↓ Règle l'icône du bloc d'informations de retrait */
   .lr-pickup .lr-icon {
     color: var(--lr-color-accent);
   }
